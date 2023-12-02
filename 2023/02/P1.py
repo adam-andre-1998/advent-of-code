@@ -1,4 +1,4 @@
-f = open('day2-2023-input.txt')
+f = open('P1-input.txt')
 possibleRed = 12
 possibleGreen = 13
 possibleBlue = 14

@@ -1,4 +1,4 @@
-f = open("day1-2023-input.txt")
+f = open("P1-input.txt")
 
 numbers = []
 
