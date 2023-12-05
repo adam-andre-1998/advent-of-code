@@ -89,24 +89,12 @@ def solutionForSeedList(seedList):
         seedList = mapped + notMapped
     return min(seedList)
 
+solution = solutionForSeedList(getFirstSeedRange(seeds))
+solutionSeed = mapLocationToSeed(solution)
+approximations = [100000, 10000, 1000, 100, 10, 1]
 
-approx1 = solutionForSeedList(getFirstSeedRange(seeds))
-approx1 = mapLocationToSeed(approx1)
+for approx in approximations:
+    solution = solutionForSeedList([*range(solutionSeed-approx*10, solutionSeed+approx*10, approx)])
+    solutionSeed = mapLocationToSeed(solution)
 
-approx2 = solutionForSeedList([*range(approx1 - 1000000, approx1 + 1000000, 100000)])
-approx2 = mapLocationToSeed(approx2)
-
-approx3 = solutionForSeedList([*range(approx2 - 100000, approx2 + 100000, 10000)])
-approx3 = mapLocationToSeed(approx3)
-
-approx4 = solutionForSeedList([*range(approx3 - 10000, approx3 + 10000, 1000)])
-approx4 = mapLocationToSeed(approx4)
-
-approx5 = solutionForSeedList([*range(approx4 - 1000, approx4 + 1000, 100)])
-approx5 = mapLocationToSeed(approx5)
-
-approx6 = solutionForSeedList([*range(approx5 - 100, approx5 + 100, 10)])
-approx6 = mapLocationToSeed(approx6)
-
-approx7 = solutionForSeedList([*range(approx6 - 10, approx6 + 100, 1)])
-print(approx7)
+print(solution)
